@@ -1,15 +1,17 @@
 """
-BlickStick Infrastructure Monitor - Mock Health Provider
+BlickStick Infrastructure Monitor - API Health Provider
 
-This provider is used for testing purposes
+This provider connects to the dedicated API server
 """
 
 import schedule
 import random
 from modules.models.ServiceState import ServiceState
+import requests
 
+API_URL="http://localhost:3000/health_data"
 
-class MockHealthProvider:
+class ApiHealthProvider:
 
     slot_count = 0
     current_status = []
@@ -19,13 +21,11 @@ class MockHealthProvider:
         self.slot_count = slot_count
 
     def updateMockState(self):
-        slot = random.randrange(self.slot_count)
-        new_state = random.choice(list(ServiceState))
-        self.current_status[slot] = new_state
+        body = requests.get(API_URL)
+        self.current_status = [ServiceState[string_value] for string_value in body.json()["health_data"]]
 
     def start(self):
         self.tearDown()
-
         self.current_status = [ServiceState.NOT_RUNNING] * self.slot_count
         self.job = schedule.every(5).seconds.do(self.updateMockState)
 

@@ -9,7 +9,7 @@ __license__ = "MIT"
 
 import argparse
 import time
-from modules.providers.MockHealthProvider import MockHealthProvider
+from modules.providers.ApiHealthProvider import ApiHealthProvider
 from modules.utils.ColourUtils import mapStateToColour
 from blinkstick import blinkstick
 from modules.utils.ScheduleThread import ScheduleThread
@@ -29,7 +29,7 @@ def main(args):
         exit(1)
     bstick.set_led_count(LED_COUNT)
 
-    mockHealthProvider = MockHealthProvider()
+    mockHealthProvider = ApiHealthProvider(LED_COUNT)
     register(mockHealthProvider)
 
     ScheduleThread().start()
@@ -38,11 +38,12 @@ def main(args):
     while True:
         status = mockHealthProvider.getHealth()
         print("Status: {}".format(status))
-        for index in status:
+        for index in range(len(status)):
             state = status[index]
             colour = mapStateToColour(state)
             print("Setting channel {} to colour {}".format(index, colour))
             bstick.set_color(index=index, hex=colour)
+            time.sleep(0.1)
 
         time.sleep(1)
 
