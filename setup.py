@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='blinkstick_infra_monitor',
       version='0.0.1',
@@ -7,7 +7,7 @@ setup(name='blinkstick_infra_monitor',
       author='Sean Dawson',
       author_email='spdawson@agiledigital.com.au',
       license='MIT',
-      packages=['blinkstick_infra_monitor'],
+      packages=find_packages(),
       scripts=["bin/blinkstick_infra_monitor"],
       install_requires=[
         'astroid==1.5.3',
