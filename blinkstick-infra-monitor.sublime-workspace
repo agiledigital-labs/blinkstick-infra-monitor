@@ -17,7 +17,7 @@
 			}
 		},
 		{
-			"file": "src/providers/mock.py",
+			"file": "providers/mock.py",
 			"settings":
 			{
 				"buffer_size": 258,
@@ -27,7 +27,7 @@
 			}
 		},
 		{
-			"file": "src/lib/servicestate.py",
+			"file": "lib/servicestate.py",
 			"settings":
 			{
 				"buffer_size": 388,
@@ -296,7 +296,7 @@
 				},
 				{
 					"buffer": 1,
-					"file": "src/providers/mock.py",
+					"file": "providers/mock.py",
 					"semi_transient": false,
 					"settings":
 					{
@@ -401,7 +401,7 @@
 				},
 				{
 					"buffer": 2,
-					"file": "src/lib/servicestate.py",
+					"file": "lib/servicestate.py",
 					"semi_transient": false,
 					"settings":
 					{

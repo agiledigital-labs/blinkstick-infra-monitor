@@ -1,0 +1,19 @@
+name: blinkstick-infra-monitor
+version: '0.0.1'
+summary: An attempt at showing infrastucture health on a light strip 
+description: |
+  I started out wanting to make an intergrated health reporting system,
+  and now, now I just want python to work as a snap.
+
+grade: devel
+confinement: strict 
+
+apps:
+  infra-monitor:
+    command: bin/blinkstick_infra_monitor 
+
+parts:
+  infra-monitor:
+    plugin: python
+    requirements: ./requirements.txt
+    source: . 

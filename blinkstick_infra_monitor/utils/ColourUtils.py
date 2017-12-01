@@ -1,5 +1,5 @@
 
-from modules.models.ServiceState import ServiceState
+from blinkstick_infra_monitor.models.ServiceState import ServiceState
 
 def mapStateToColour(state):
     if state == ServiceState.NOT_RUNNING:

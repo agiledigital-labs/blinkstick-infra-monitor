@@ -6,7 +6,7 @@ This provider is used for testing purposes
 
 import schedule
 import random
-from modules.models.ServiceState import ServiceState
+from models.ServiceState import ServiceState
 
 
 class MockHealthProvider:

@@ -104,4 +104,11 @@ venv.bak/
 # mypy
 .mypy_cache/
 
+### Snapcraft ###
+# Snapcraft
+parts/
+prime/
+stage/
+*.snap
+
 # End of https://www.gitignore.io/api/python

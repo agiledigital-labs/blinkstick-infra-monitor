@@ -9,10 +9,10 @@ __license__ = "MIT"
 
 import argparse
 import time
-from modules.providers.ApiHealthProvider import ApiHealthProvider
-from modules.utils.ColourUtils import mapStateToColour
+from blinkstick_infra_monitor.providers.ApiHealthProvider import ApiHealthProvider
+from blinkstick_infra_monitor.utils.ColourUtils import mapStateToColour
+from blinkstick_infra_monitor.utils.ScheduleThread import ScheduleThread
 from blinkstick import blinkstick
-from modules.utils.ScheduleThread import ScheduleThread
 
 LED_COUNT=32
 
