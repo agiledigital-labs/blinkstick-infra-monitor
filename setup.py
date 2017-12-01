@@ -10,7 +10,19 @@ setup(name='blinkstick_infra_monitor',
       packages=['blinkstick_infra_monitor'],
       scripts=["bin/blinkstick_infra_monitor"],
       install_requires=[
-   		'BlinkStick',
-   		'pyusb',
-   		'schedule'
-	  ])
+        'astroid==1.5.3',
+        'BlinkStick==1.1.8',
+        'certifi==2017.11.5',
+        'chardet==3.0.4',
+        'idna==2.6',
+        'isort==4.2.15',
+        'lazy-object-proxy==1.3.1',
+        'mccabe==0.6.1',
+        'pylint==1.7.4',
+        'pyusb==1.0.0b1',
+        'requests==2.18.4',
+        'schedule==0.5.0',
+        'six==1.11.0',
+        'urllib3==1.22',
+        'wrapt==1.10.11'
+      ])
