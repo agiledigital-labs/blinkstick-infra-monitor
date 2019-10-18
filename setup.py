@@ -23,6 +23,6 @@ setup(name='blinkstick_infra_monitor',
         'requests==2.18.4',
         'schedule==0.5.0',
         'six==1.11.0',
-        'urllib3==1.22',
+        'urllib3==1.24.2',
         'wrapt==1.10.11'
       ])
